@@ -1,0 +1,70 @@
+chandan@chandan-dell:~$ cd ~/Downloads
+chandan@chandan-dell:~/Downloads$ wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-3.2.1.tgz
+--2016-01-16 01:48:10--  https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-3.2.1.tgz
+Connecting to 172.16.1.12:3128... connected.
+Proxy request sent, awaiting response... 200 OK
+Length: 75965465 (72M) [application/x-gzip]
+Saving to: ‘mongodb-linux-x86_64-ubuntu1404-3.2.1.tgz’
+
+100%[======================================>] 7,59,65,465 10.2MB/s   in 7.7s   
+
+2016-01-16 01:48:20 (9.44 MB/s) - ‘mongodb-linux-x86_64-ubuntu1404-3.2.1.tgz’ saved [75965465/75965465]
+
+chandan@chandan-dell:~/Downloads$ tar -zxvf mongodb-linux-x86_64-ubuntu1404-3.2.1.tgz
+mongodb-linux-x86_64-ubuntu1404-3.2.1/README
+mongodb-linux-x86_64-ubuntu1404-3.2.1/THIRD-PARTY-NOTICES
+mongodb-linux-x86_64-ubuntu1404-3.2.1/MPL-2
+mongodb-linux-x86_64-ubuntu1404-3.2.1/GNU-AGPL-3.0
+mongodb-linux-x86_64-ubuntu1404-3.2.1/bin/mongodump
+mongodb-linux-x86_64-ubuntu1404-3.2.1/bin/mongorestore
+mongodb-linux-x86_64-ubuntu1404-3.2.1/bin/mongoexport
+mongodb-linux-x86_64-ubuntu1404-3.2.1/bin/mongoimport
+mongodb-linux-x86_64-ubuntu1404-3.2.1/bin/mongostat
+mongodb-linux-x86_64-ubuntu1404-3.2.1/bin/mongotop
+mongodb-linux-x86_64-ubuntu1404-3.2.1/bin/bsondump
+mongodb-linux-x86_64-ubuntu1404-3.2.1/bin/mongofiles
+mongodb-linux-x86_64-ubuntu1404-3.2.1/bin/mongooplog
+mongodb-linux-x86_64-ubuntu1404-3.2.1/bin/mongoperf
+mongodb-linux-x86_64-ubuntu1404-3.2.1/bin/mongosniff
+mongodb-linux-x86_64-ubuntu1404-3.2.1/bin/mongod
+mongodb-linux-x86_64-ubuntu1404-3.2.1/bin/mongos
+mongodb-linux-x86_64-ubuntu1404-3.2.1/bin/mongo
+chandan@chandan-dell:~/Downloads$ echo $PATH
+/usr/local/heroku/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+chandan@chandan-dell:~/Downloads$ sudo ln -s ~/Downloads/mongodb-linux-x86_64-ubuntu1404-3.2.1/bin/mongod
+[sudo] password for chandan: 
+chandan@chandan-dell:~/Downloads$ mongod --version
+The program 'mongod' is currently not installed. You can install it by typing:
+sudo apt-get install mongodb-server
+chandan@chandan-dell:~/Downloads$ mongod --version
+The program 'mongod' is currently not installed. You can install it by typing:
+sudo apt-get install mongodb-server
+chandan@chandan-dell:~/Downloads$ cd Downloads
+bash: cd: Downloads: No such file or directory
+chandan@chandan-dell:~/Downloads$ sudo ln -s ~/Downloads/mongodb-linux-x86_64-ubuntu1404-3.2.1/bin/mongod /usr/local/bin/mongod
+chandan@chandan-dell:~/Downloads$ mongod --version
+db version v3.2.1
+git version: a14d55980c2cdc565d4704a7e3ad37e4e535c1b2
+OpenSSL version: OpenSSL 1.0.1f 6 Jan 2014
+allocator: tcmalloc
+modules: none
+build environment:
+    distmod: ubuntu1404
+    distarch: x86_64
+    target_arch: x86_64
+chandan@chandan-dell:~/Downloads$ sudo ln -s ~/Downloads/mongodb-linux-x86_64-ubuntu1404-3.2.1/bin/mongo /usr/local/bin/mongo
+chandan@chandan-dell:~/Downloads$ mongo --version
+MongoDB shell version: 3.2.
+chandan@chandan-dell:~$ mkdir data
+chandan@chandan-dell:~$ cd data
+chandan@chandan-dell:~/data$ mkdir db
+chandan@chandan-dell:~/data$ pwd
+/home/chandan/data
+chandan@chandan-dell:~/data$ cd db
+chandan@chandan-dell:~/data/db$ pwd
+/home/chandan/data/db
+chandan@chandan-dell:~/data/db$ cd 
+chandan@chandan-dell:~$ cd Downloads
+chandan@chandan-dell:~/Downloads$ mongod --dbpath ~/data/db/
+
+
